@@ -18,31 +18,17 @@ body {
 }
 
 /* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    background: rgba(11,15,26,0.7);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-}
-
-nav h1 {
-    font-size: 20px;
-}
-
-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-nav a:hover {
-    color: white;
-}
+<nav>
+    <div style="display:flex; align-items:center;">
+        <img src="OnteraLogo.png" alt="Ontera Logo" style="height:40px; margin-right:10px;">
+        <h1>Ontera</h1>
+    </div>
+    <div>
+        <a href="#hizmet">Hizmetler</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+    </div>
+</nav>
 
 /* HERO */
 .hero {
