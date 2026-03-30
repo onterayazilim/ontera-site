@@ -12,7 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        ontera: '#d60e71', // Logondaki magenta tonu
+                        ontera: '#d60e71',
                         dark: '#111111'
                     }
                 }
@@ -21,23 +21,36 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; overflow-x: hidden; }
         .service-card:hover { border-color: #d60e71; transform: translateY(-5px); }
+        #mobile-menu { transition: all 0.3s ease-in-out; }
     </style>
 </head>
 <body class="text-dark">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <nav class="fixed w-full z-[100] bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center">
+            <a href="#home" class="flex items-center shrink-0">
                 <img src="OnteraLogo.png" alt="Ontera Logo" class="h-10">
-            </div>
-            <div class="hidden md:flex space-x-8 font-medium text-slate-600 uppercase text-sm tracking-wider">
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 font-medium text-slate-600 uppercase text-xs tracking-wider">
                 <a href="#home" class="hover:text-ontera transition">Ana Sayfa</a>
                 <a href="#services" class="hover:text-ontera transition">Hizmetler</a>
                 <a href="#about" class="hover:text-ontera transition">Hakkımızda</a>
-                <a href="#contact" class="bg-dark text-white px-6 py-2 rounded-md hover:bg-ontera transition">İLETİŞİM</a>
+                <a href="#contact" class="bg-dark text-white px-6 py-2.5 rounded-md hover:bg-ontera transition inline-block">İLETİŞİM</a>
             </div>
+
+            <button id="menu-btn" class="md:hidden p-2 text-dark">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" class="mobile-link block font-semibold text-slate-600">Ana Sayfa</a>
+            <a href="#services" class="mobile-link block font-semibold text-slate-600">Hizmetler</a>
+            <a href="#about" class="mobile-link block font-semibold text-slate-600">Hakkımızda</a>
+            <a href="#contact" class="mobile-link block bg-ontera text-white px-4 py-3 rounded-lg text-center font-bold">İLETİŞİM</a>
         </div>
     </nav>
 
@@ -54,52 +67,64 @@
                     Ontera Yazılım, fikirlerinizi modern teknolojiler ve şık tasarımlarla dijital dünyaya taşıyan çözüm ortağınızdır.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#services" class="bg-dark text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-ontera transition shadow-lg shadow-ontera/10">Neler Yapıyoruz?</a>
-                    <a href="#contact" class="border-2 border-dark px-8 py-4 rounded-lg font-bold text-center hover:bg-dark hover:text-white transition">Hadi Başlayalım</a>
+                    <a href="#services" class="bg-dark text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-ontera transition">Hizmetlerimiz</a>
+                    <a href="#contact" class="border-2 border-dark px-8 py-4 rounded-lg font-bold text-center hover:bg-dark hover:text-white transition">Teklif Al</a>
                 </div>
             </div>
             <div class="relative" data-aos="fade-left">
-                <div class="absolute -top-10 -left-10 w-32 h-32 bg-ontera/5 rounded-full blur-3xl"></div>
                 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" 
-                     class="rounded-3xl shadow-2xl border border-slate-100 grayscale hover:grayscale-0 transition duration-700" 
-                     alt="Coding">
+                     class="rounded-3xl shadow-2xl border border-slate-100 grayscale hover:grayscale-0 transition duration-700 w-full" alt="Coding">
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-24 border-t border-slate-50">
+    <section id="services" class="py-24 bg-slate-50/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                 <div>
                     <h2 class="text-4xl font-bold tracking-tight">Uzmanlık Alanlarımız</h2>
                     <div class="w-16 h-2 bg-ontera mt-4"></div>
                 </div>
-                <p class="text-slate-500 max-w-sm">İhtiyacınıza uygun, ölçeklenebilir ve güvenli yazılım mimarileri inşa ediyoruz.</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card p-10 bg-white border border-slate-100 rounded-3xl transition duration-300" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-dark text-white rounded-2xl flex items-center justify-center mb-8">
-                        <i data-lucide="layout"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Web Tasarım & Yazılım</h3>
-                    <p class="text-slate-500 leading-relaxed">Modern arayüzler ve güçlü backend yapıları ile markanızın dijital yüzünü oluşturuyoruz.</p>
+                <div class="service-card p-10 bg-white border border-slate-100 rounded-3xl transition" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-dark text-white rounded-xl flex items-center justify-center mb-6"><i data-lucide="layout"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Web Yazılım</h3>
+                    <p class="text-slate-500">Modern ve SEO uyumlu web uygulamaları.</p>
                 </div>
-
-                <div class="service-card p-10 bg-white border border-slate-100 rounded-3xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-ontera text-white rounded-2xl flex items-center justify-center mb-8">
-                        <i data-lucide="smartphone"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Mobil Uygulama</h3>
-                    <p class="text-slate-500 leading-relaxed">iOS ve Android platformlarında yüksek performanslı, native ve hibrit uygulamalar geliştiriyoruz.</p>
+                <div class="service-card p-10 bg-white border border-slate-100 rounded-3xl transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-ontera text-white rounded-xl flex items-center justify-center mb-6"><i data-lucide="smartphone"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Mobil Uygulama</h3>
+                    <p class="text-slate-500">Yüksek performanslı iOS ve Android çözümleri.</p>
                 </div>
+                <div class="service-card p-10 bg-white border border-slate-100 rounded-3xl transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-dark text-white rounded-xl flex items-center justify-center mb-6"><i data-lucide="database"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Özel Yazılımlar</h3>
+                    <p class="text-slate-500">İşletmenize özel CRM ve otomasyon sistemleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="service-card p-10 bg-white border border-slate-100 rounded-3xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-dark text-white rounded-2xl flex items-center justify-center mb-8">
-                        <i data-lucide="command"></i>
+    <section id="about" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6 italic text-ontera underline">Biz Kimiz?</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Ontera Yazılım olarak, teknolojiye olan tutkumuzu profesyonel iş disipliniyle birleştiriyoruz. Genç ve dinamik ekibimizle, her projeyi bir sanat eseri titizliğinde ele alıyor ve dijital dönüşüm süreçlerinize rehberlik ediyoruz.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check-circle" class="text-ontera"></i> Yenilikçi Yaklaşım</li>
+                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check-circle" class="text-ontera"></i> Müşteri Odaklı Çözümler</li>
+                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check-circle" class="text-ontera"></i> Zamanında Teslimat</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-100 h-80 rounded-3xl flex items-center justify-center p-8" data-aos="zoom-in">
+                    <div class="text-center">
+                        <i data-lucide="users" class="w-20 h-20 text-ontera/20 mx-auto mb-4"></i>
+                        <p class="text-slate-400 font-semibold italic">Ontera Yazılım Ekibi</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Kurumsal Çözümler</h3>
-                    <p class="text-slate-500 leading-relaxed">İş süreçlerinizi hızlandıracak özel ERP, CRM ve otomasyon sistemleri tasarlıyoruz.</p>
                 </div>
             </div>
         </div>
@@ -109,40 +134,50 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-16 mb-20">
                 <div>
-                    <h2 class="text-4xl font-bold mb-8">Bizimle İletişime Geçin</h2>
-                    <p class="text-slate-400 text-lg mb-10">Projenizi hayata geçirmek için sabırsızlanıyoruz. Formu doldurun, size en kısa sürede dönüş yapalım.</p>
+                    <h2 class="text-4xl font-bold mb-8 italic">İletişime Geçin</h2>
+                    <p class="text-slate-400 text-lg mb-10">Yeni bir projeniz mi var? Gelin beraber geliştirelim.</p>
                     <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 border border-ontera flex items-center justify-center rounded-full text-ontera italic">@</div>
-                            <span>iletisim@ontera.com</span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 border border-ontera flex items-center justify-center rounded-full text-ontera italic">#</div>
-                            <span>İstanbul, Türkiye</span>
-                        </div>
+                        <div class="flex items-center gap-4"><i data-lucide="mail" class="text-ontera"></i> <span>iletisim@ontera.com</span></div>
+                        <div class="flex items-center gap-4"><i data-lucide="map-pin" class="text-ontera"></i> <span>İstanbul, Türkiye</span></div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-3xl" data-aos="zoom-in">
+                <div class="bg-white p-8 rounded-3xl text-dark" data-aos="fade-left">
                     <form class="space-y-4">
-                        <input type="text" placeholder="Adınız Soyadınız" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-dark focus:ring-2 focus:ring-ontera focus:outline-none transition">
-                        <input type="email" placeholder="E-posta Adresiniz" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-dark focus:ring-2 focus:ring-ontera focus:outline-none transition">
-                        <textarea placeholder="Projenizden bahsedin..." rows="4" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-dark focus:ring-2 focus:ring-ontera focus:outline-none transition"></textarea>
-                        <button class="w-full bg-ontera text-white py-4 rounded-xl font-bold hover:bg-dark transition duration-300">MESAJI GÖNDER</button>
+                        <input type="text" placeholder="Adınız" class="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-ontera transition">
+                        <input type="email" placeholder="E-posta" class="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-ontera transition">
+                        <textarea placeholder="Mesajınız" rows="3" class="w-full p-4 bg-slate-50 rounded-xl outline-none focus:ring-2 focus:ring-ontera transition"></textarea>
+                        <button class="w-full bg-ontera text-white py-4 rounded-xl font-bold hover:bg-black transition">GÖNDER</button>
                     </form>
                 </div>
             </div>
-            
-            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <img src="OnteraLogo.png" alt="Ontera Logo Footer" class="h-8 brightness-0 invert opacity-50">
-                <p class="text-slate-500 text-sm">© 2026 Ontera Yazılım. Tüm Hakları Saklıdır.</p>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm italic">
+                <p>&copy; 2026 Ontera Yazılım</p>
+                <img src="OnteraLogo.png" alt="Logo" class="h-6 grayscale opacity-50">
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // İkonları yükle
         lucide.createIcons();
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 800, once: true });
+
+        // Mobil Menü Mantığı
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Linklere tıklandığında menüyü kapat
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>
