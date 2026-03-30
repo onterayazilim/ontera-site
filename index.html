@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ontera Yazılım | BT Altyapınızı Biz Yönetelim, Siz İşinize Odaklanın</title>
+    <title>Ontera Yazılım | BT Altyapınızı Biz Yönetelim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,147 +22,170 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #ffffff; overflow-x: hidden; }
+        
+        /* Hareketli ve Belirgin Teknoloji Deseni */
+        .tech-bg {
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+
+        .tech-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, white 80%);
+            pointer-events: none;
+        }
+
+        /* Dekoratif Çizgiler */
+        .line-decoration {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #d60e71, transparent);
+            height: 1px;
+            width: 100%;
+            opacity: 0.1;
+            animation: scan 8s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(500px); }
+        }
+
         .service-card:hover { border-color: #d60e71; transform: translateY(-8px); }
         #mobile-menu { transition: all 0.3s ease-in-out; }
-        /* Belli belirsiz teknoloji çizgileri deseni */
-        .tech-pattern {
-            background-color: #ffffff;
-            background-image:  linear-gradient(#f3f4f6 1.2px, transparent 1.2px), linear-gradient(90deg, #f3f4f6 1.2px, transparent 1.2px), linear-gradient(#f3f4f6 0.6px, transparent 0.6px), linear-gradient(90deg, #f3f4f6 0.6px, #ffffff 0.6px);
-            background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
-            background-position: -1.2px -1.2px, -1.2px -1.2px, -0.6px -0.6px, -0.6px -0.6px;
-            opacity: 0.15; /* Çok hafif görünmesi için */
-        }
     </style>
 </head>
 <body class="text-dark">
 
     <nav class="fixed w-full z-[100] bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="flex items-center shrink-0">
+            <a href="#home" class="flex items-center">
                 <img src="OnteraLogo.png" alt="Ontera Logo" class="h-10 md:h-12">
             </a>
 
             <div class="hidden md:flex items-center space-x-10 font-semibold text-slate-600 uppercase text-[11px] tracking-[2px]">
-                <a href="#home" class="mobile-link block text-lg font-bold text-slate-800">Ana Sayfa</a>
-                <a href="#services" class="mobile-link block text-lg font-bold text-slate-800">Hizmetler</a>
-                <a href="#about" class="mobile-link block text-lg font-bold text-slate-800">Hakkımızda</a>
-                <a href="#contact" class="mobile-link block bg-ontera text-white px-4 py-4 rounded-xl text-center font-bold">İLETİŞİM</a>
+                <a href="#home" class="hover:text-ontera transition">Ana Sayfa</a>
+                <a href="#services" class="hover:text-ontera transition">Hizmetler</a>
+                <a href="#about" class="hover:text-ontera transition">Hakkımızda</a>
+                <a href="#contact" class="bg-dark text-white px-7 py-3 rounded-md hover:bg-ontera transition">İLETİŞİM</a>
             </div>
 
             <button id="menu-btn" class="md:hidden p-2 text-dark">
                 <i data-lucide="menu"></i>
             </button>
         </div>
-
+        
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 px-6 py-8 space-y-6 shadow-2xl">
-            <a href="#home" class="mobile-link block text-lg font-bold text-slate-800">Ana Sayfa</a>
-            <a href="#services" class="mobile-link block text-lg font-bold text-slate-800">Hizmetler</a>
-            <a href="#about" class="mobile-link block text-lg font-bold text-slate-800">Hakkımızda</a>
+            <a href="#home" class="mobile-link block text-lg font-bold">Ana Sayfa</a>
+            <a href="#services" class="mobile-link block text-lg font-bold">Hizmetler</a>
+            <a href="#about" class="mobile-link block text-lg font-bold">Hakkımızda</a>
             <a href="#contact" class="mobile-link block bg-ontera text-white px-4 py-4 rounded-xl text-center font-bold">İLETİŞİM</a>
         </div>
     </nav>
 
-    <section id="home" class="pt-32 pb-16 md:pt-52 md:pb-32 relative">
-        <div class="absolute inset-0 tech-pattern z-0"></div> <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+    <section id="home" class="pt-40 pb-24 md:pt-60 md:pb-40 tech-bg overflow-hidden">
+        <div class="line-decoration" style="top: 20%"></div>
+        <div class="line-decoration" style="top: 50%; animation-delay: 4s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
             <div data-aos="fade-up">
-                <span class="inline-block px-4 py-1.5 bg-ontera/5 text-ontera rounded-full text-[10px] font-black tracking-[3px] uppercase mb-8">Ontera Tech Solutions</span>
-                <h1 class="text-5xl md:text-7xl font-bold text-dark leading-tight mb-8 tracking-tight max-w-5xl mx-auto">
-                    BT Altyapınızı Biz Yönetelim, <br/><span class="text-ontera">Siz İşinize Odaklanın.</span>
+                <span class="inline-block px-4 py-1.5 bg-ontera/10 text-ontera rounded-full text-[10px] font-black tracking-[3px] uppercase mb-8">Profesyonel BT Yönetimi</span>
+                <h1 class="text-5xl md:text-8xl font-bold text-dark leading-tight mb-8 tracking-tighter max-w-5xl mx-auto">
+                    BT Altyapınızı Biz Yönetelim, <br/><span class="text-ontera italic">Siz İşinize Odaklanın.</span>
                 </h1>
-                <p class="text-slate-500 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed mx-auto">
-                    Karmaşık teknoloji süreçlerinizi basitleştiriyor, güvenli ve sürdürülebilir bir dijital altyapı kurarak iş verimliliğinizi artırıyoruz.
+                <p class="text-slate-500 text-lg md:text-2xl max-w-3xl mb-12 leading-relaxed mx-auto font-light">
+                    Sistemlerinizi modernize ediyor, güvenliğinizi sağlıyor ve tüm teknolojik yükü omuzlarınızdan alıyoruz.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                    <a href="#contact" class="bg-dark text-white px-10 py-5 rounded-2xl font-bold text-center hover:bg-ontera transition-all shadow-xl shadow-dark/10">Teklif Al</a>
+                <div class="flex justify-center">
+                    <a href="#contact" class="bg-dark text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-ontera transition-all shadow-2xl shadow-dark/20 active:scale-95">Ücretsiz Analiz Al</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-24 bg-white">
+    <section id="services" class="py-24 bg-white border-t border-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 italic">Uzmanlık Alanlarımız</h2>
-                <div class="w-24 h-1.5 bg-ontera mx-auto rounded-full"></div>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 italic uppercase">Hizmetlerimiz</h2>
+                <div class="w-20 h-2 bg-ontera mx-auto"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="service-card p-12 bg-slate-50/50 border border-slate-100 rounded-[32px] transition-all duration-500" data-aos="fade-up">
-                    <div class="w-16 h-16 bg-dark text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-dark/20"><i data-lucide="monitor"></i></div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Altyapı Yönetimi</h3>
-                    <p class="text-slate-500 leading-relaxed">Güvenli, ölçeklenebilir ve kesintisiz sunucu ve ağ altyapı çözümleri.</p>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="service-card p-12 bg-white border border-slate-100 rounded-[40px] transition-all" data-aos="fade-up">
+                    <i data-lucide="shield-check" class="w-12 h-12 text-ontera mb-8"></i>
+                    <h3 class="text-2xl font-bold mb-4">Siber Güvenlik</h3>
+                    <p class="text-slate-500">Uçtan uca veri koruması ve tehdit yönetimi ile işinizi güvence altına alın.</p>
                 </div>
-
-                <div class="service-card p-12 bg-slate-50/50 border border-slate-100 rounded-[32px] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-ontera text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-ontera/20"><i data-lucide="smartphone-charging"></i></div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Dijital Dönüşüm</h3>
-                    <p class="text-slate-500 leading-relaxed">İş süreçlerinizi modern teknolojilerle dijital dünyaya entegre ediyoruz.</p>
+                <div class="service-card p-12 bg-white border border-slate-100 rounded-[40px] transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="cloud" class="w-12 h-12 text-dark mb-8"></i>
+                    <h3 class="text-2xl font-bold mb-4">Bulut Çözümleri</h3>
+                    <p class="text-slate-500">Verilerinizi buluta taşıyarak her yerden güvenli erişim ve yüksek performans sağlayın.</p>
                 </div>
-
-                <div class="service-card p-12 bg-slate-50/50 border border-slate-100 rounded-[32px] transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-dark text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-dark/20"><i data-lucide="cpu"></i></div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Siber Güvenlik</h3>
-                    <p class="text-slate-500 leading-relaxed">Verilerinizi ve sistemlerinizi en güncel güvenlik tehditlerine karşı koruyoruz.</p>
+                <div class="service-card p-12 bg-white border border-slate-100 rounded-[40px] transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="settings" class="w-12 h-12 text-ontera mb-8"></i>
+                    <h3 class="text-2xl font-bold mb-4">7/24 Bakım & Destek</h3>
+                    <p class="text-slate-500">Altyapınızdaki tüm sorunlara anında müdahale ediyor, iş sürekliliğinizi koruyoruz.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 bg-dark text-white">
+    <section id="about" class="py-24 bg-dark text-white relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-20 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-8 italic">Biz Kimiz?</h2>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8 italic">Ontera Hakkında</h2>
                     <p class="text-slate-400 text-xl leading-relaxed mb-8">
-                        Ontera, teknolojiyi karmaşık bir sorun olmaktan çıkarıp, işletmeniz için stratejik bir avantaja dönüştüren uzman bir ekiptir. Sadelik, güvenlik ve sürdürülebilirlik temel ilkelerimizdir.
+                        Biz, kurumların teknolojiyle olan bağını güçlendirmek için kurulmuş bir teknoloji ortağıyız. Amacımız, karmaşık BT süreçlerini görünmez kılıp verimliliği en üst düzeye çıkarmaktır.
                     </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                            <h4 class="text-ontera font-bold text-3xl mb-1">%100</h4>
-                            <p class="text-xs uppercase tracking-widest text-slate-500">Müşteri Memnuniyeti</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-ontera font-bold">
+                            <i data-lucide="check" class="w-6 h-6"></i> Deneyimli Mühendis Kadrosu
                         </div>
-                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                            <h4 class="text-ontera font-bold text-3xl mb-1">7/24</h4>
-                            <p class="text-xs uppercase tracking-widest text-slate-500">Kesintisiz Destek</p>
+                        <div class="flex items-center gap-4 text-ontera font-bold">
+                            <i data-lucide="check" class="w-6 h-6"></i> Global Standartlarda Güvenlik
                         </div>
                     </div>
                 </div>
-                <div class="relative group" data-aos="zoom-in">
-                    <div class="absolute inset-0 bg-ontera/20 blur-[120px] rounded-full group-hover:bg-ontera/30 transition-all"></div>
-                    <div class="relative bg-white/5 border border-white/10 p-12 rounded-[40px] text-center backdrop-blur-xl">
-                         <i data-lucide="sparkles" class="w-20 h-20 text-ontera mx-auto mb-6"></i>
-                         <p class="text-2xl font-light italic">"Teknolojiyle Geleceği Tasarlıyoruz."</p>
-                    </div>
+                <div class="bg-ontera/5 border border-white/10 p-16 rounded-[60px] text-center" data-aos="zoom-in">
+                    <div class="text-7xl font-bold text-ontera mb-4">10+</div>
+                    <p class="text-slate-400 uppercase tracking-widest text-sm">Yıllık Sektörel Deneyim</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="py-32 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div data-aos="fade-up">
-                <h2 class="text-5xl font-bold mb-6 italic">Hadi Başlayalım</h2>
-                <p class="text-slate-500 text-lg mb-12">Fikriniz ne olursa olsun, doğru teknolojiyle onu devleştirebiliriz.</p>
-                
-                <form class="grid md:grid-cols-2 gap-4 text-left">
-                    <input type="text" placeholder="Adınız" class="p-5 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition">
-                    <input type="email" placeholder="E-posta" class="p-5 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition">
-                    <textarea placeholder="Proje detaylarınız..." rows="4" class="md:col-span-2 p-5 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition"></textarea>
-                    <button class="md:col-span-2 bg-dark text-white py-5 rounded-2xl font-bold text-xl hover:bg-ontera transition-all transform active:scale-95 shadow-xl shadow-ontera/10">Mesajı İlet</button>
-                </form>
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold mb-6 italic">Bize Ulaşın</h2>
+                <p class="text-slate-500">Formu doldurun, BT uzmanlarımız size 24 saat içinde dönüş yapsın.</p>
             </div>
+            
+            <form class="space-y-6" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Adınız Soyadınız" class="w-full p-5 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-ontera outline-none transition">
+                    <input type="email" placeholder="E-posta Adresiniz" class="w-full p-5 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-ontera outline-none transition">
+                </div>
+                <textarea placeholder="BT altyapınızdaki ihtiyaçlarınızdan bahsedin..." rows="5" class="w-full p-5 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-ontera outline-none transition"></textarea>
+                <button class="w-full bg-dark text-white py-6 rounded-2xl font-bold text-xl hover:bg-ontera transition-all shadow-2xl">TALEP GÖNDER</button>
+            </form>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-100 bg-white">
+    <footer class="py-12 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-slate-400 text-sm font-medium">
-                © 2026 <span class="text-dark font-bold">ONTERA</span>. Tüm Hakları Saklıdır.
+            <div class="text-slate-400 text-sm">
+                © 2026 <span class="text-dark font-bold">ONTERA TECHNOLOGY</span>. Tüm Hakları Saklıdır.
             </div>
-            <div class="flex space-x-6">
-                <a href="#" class="text-slate-400 hover:text-ontera transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                <a href="#" class="text-slate-400 hover:text-ontera transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                <a href="#" class="text-slate-400 hover:text-ontera transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <div class="flex space-x-8 text-slate-400">
+                <a href="#" class="hover:text-ontera transition">LinkedIn</a>
+                <a href="#" class="hover:text-ontera transition">Instagram</a>
             </div>
         </div>
     </footer>
@@ -170,7 +193,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         lucide.createIcons();
-        AOS.init({ duration: 800, once: true, disable: 'mobile' });
+        AOS.init({ duration: 800, once: true });
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
