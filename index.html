@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontera Yazılım | Geleceği Kodluyoruz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter text-blue-600">ONTERA</div>
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition">Ana Sayfa</a>
+                <a href="#services" class="hover:text-blue-600 transition">Hizmetler</a>
+                <a href="#about" class="hover:text-blue-600 transition">Hakkımızda</a>
+                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200">Teklif Al</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="text-blue-400 font-semibold tracking-widest uppercase text-sm">Dijital Dönüşüm Ortağınız</span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mt-4 leading-tight">
+                    Fikirlerinizi <span class="text-blue-500">Yazılıma</span> Dönüştürüyoruz.
+                </h1>
+                <p class="text-slate-400 mt-6 text-lg max-w-lg">
+                    Ontera Yazılım olarak, modern teknolojilerle işletmenizi geleceğe taşıyacak özel çözümler üretiyoruz.
+                </p>
+                <div class="mt-10 flex space-x-4">
+                    <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition">Projeleri İncele</a>
+                    <a href="#contact" class="border border-slate-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-slate-800 transition">İletişim</a>
+                </div>
+            </div>
+            <div class="hidden md:block" data-aos="zoom-in">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-blue-500/20 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Software Development" class="relative rounded-2xl shadow-2xl border border-white/10">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold italic">Neler Yapıyoruz?</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                    <i data-lucide="layout"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Web Yazılım</h3>
+                <p class="text-slate-600">Modern frameworkler ile hızlı, SEO uyumlu ve ölçeklenebilir web uygulamaları geliştiriyoruz.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                    <i data-lucide="smartphone"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Mobil Uygulama</h3>
+                <p class="text-slate-600">iOS ve Android platformlarında kullanıcı dostu, yüksek performanslı native ve hibrit çözümler.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                    <i data-lucide="database"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Özel Yazılımlar</h3>
+                <p class="text-slate-600">İşletmenize özel CRM, ERP ve otomasyon sistemleri ile süreçlerinizi dijitalleştiriyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-6">Yeni Bir Projeniz mi Var?</h2>
+                <p class="text-slate-400 mb-8 italic text-lg">Hadi konuşalım! Ekibimiz projenizi hayata geçirmek için hazır.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="mail" class="text-blue-500"></i>
+                        <span>iletisim@ontera.com</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i data-lucide="map-pin" class="text-blue-500"></i>
+                        <span>İstanbul, Türkiye</span>
+                    </div>
+                </div>
+            </div>
+            <form class="bg-white p-8 rounded-2xl space-y-4 text-slate-900" data-aos="fade-left">
+                <input type="text" placeholder="Adınız" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="email" placeholder="E-posta" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <textarea placeholder="Mesajınız" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <button class="w-full bg-blue-600 text-white py-4 rounded-lg font-bold hover:bg-blue-700 transition">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-slate-800 bg-slate-900 text-center text-slate-500 text-sm">
+        <p>&copy; 2024 Ontera Yazılım. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // İkonları yükle
+        lucide.createIcons();
+        // Animasyonları başlat
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
