@@ -181,18 +181,31 @@
     </section>
 
     <section id="contact" class="py-32">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div data-aos="fade-up">
-                <h2 class="text-5xl font-bold mb-6 italic text-dark uppercase tracking-tighter">İletişime Geçin</h2>
-                <p class="text-slate-500 text-lg mb-12">Uzman kadromuz mesajınıza en kısa sürede yanıt verecektir.</p>
-                <form class="grid md:grid-cols-2 gap-4 text-left">
-                    <input type="text" placeholder="Adınız" class="p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition shadow-sm">
-                    <input type="email" placeholder="E-posta" class="p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition shadow-sm">
-                    <textarea placeholder="Proje detaylarınız..." rows="4" class="md:col-span-2 p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition shadow-sm"></textarea>
-                    <button class="md:col-span-2 bg-dark text-white py-5 rounded-2xl font-bold text-xl hover:bg-ontera transition shadow-xl shadow-ontera/10">Gönder</button>
-                </form>
+     <div class="max-w-4xl mx-auto px-6 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-5xl font-bold mb-6 italic text-dark uppercase tracking-tighter">İletişime Geçin</h2>
+            <p class="text-slate-500 text-lg mb-12">Uzman kadromuz mesajınıza en kısa sürede yanıt verecektir.</p>
+            
+            <form action="https://formspree.io/f/xjgpwzkk" method="POST" class="grid md:grid-cols-2 gap-4 text-left">
+                
+                <input type="text" name="ad_soyad" required placeholder="Adınız" 
+                       class="p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition shadow-sm">
+                
+                <input type="email" name="email" required placeholder="E-posta" 
+                       class="p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition shadow-sm">
+                
+                <textarea name="mesaj" required placeholder="Proje detaylarınız..." rows="4" 
+                          class="md:col-span-2 p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition shadow-sm"></textarea>
+                
+                <button type="submit" 
+                        class="md:col-span-2 bg-dark text-white py-5 rounded-2xl font-bold text-xl hover:bg-ontera transition shadow-xl shadow-ontera/10">
+                    Gönder
+                </button>
+                
+            </form>
             </div>
-        </div>
+    </div>
+</section>
     </section>
 
     <footer class="py-12 border-t border-slate-100 bg-white/90 backdrop-blur-sm">
