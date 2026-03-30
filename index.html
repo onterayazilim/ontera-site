@@ -21,17 +21,19 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; overflow-x: hidden; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff; 
+            overflow-x: hidden;
+            /* Çizgileri tüm siteye yayan desen */
+            background-image: linear-gradient(#f1f1f1 1px, transparent 1px), linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-attachment: fixed; /* Sayfa kaysa da desen sabit kalır veya akışla gider */
+        }
         .service-card:hover { border-color: #d60e71; transform: translateY(-8px); }
         
-        /* İstediğin belli belirsiz teknolojik çizgiler/ızgara deseni */
-        .hero-pattern {
-            background-color: #ffffff;
-            background-image:  linear-gradient(#f1f1f1 1px, transparent 1px), linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
-            background-size: 30px 30px;
-            background-position: center center;
-        }
-        /* Merkeze doğru odaklanma efekti (kenarları beyazlatır) */
+        /* İçeriğin okunabilirliği için bölümlere hafif beyazlık katmanı */
+        section { position: relative; z-index: 10; }
         .hero-mask {
             background: radial-gradient(circle, transparent 20%, white 100%);
         }
@@ -60,9 +62,9 @@
         </div>
     </nav>
 
-    <section id="home" class="pt-40 pb-24 md:pt-60 md:pb-40 relative hero-pattern">
-        <div class="absolute inset-0 hero-mask"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+    <section id="home" class="pt-40 pb-24 md:pt-60 md:pb-40 relative">
+        <div class="absolute inset-0 hero-mask -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center">
             <div data-aos="fade-up">
                 <span class="inline-block px-4 py-1.5 bg-ontera/10 text-ontera rounded-full text-[10px] font-black tracking-[3px] uppercase mb-8">Ontera Yazılım</span>
                 <h1 class="text-5xl md:text-7xl font-bold text-dark leading-tight mb-8 tracking-tight max-w-5xl mx-auto">
@@ -78,24 +80,24 @@
         </div>
     </section>
 
-    <section id="services" class="py-24 bg-white">
+    <section id="services" class="py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 italic">Uzmanlık Alanlarımız</h2>
                 <div class="w-24 h-1.5 bg-ontera mx-auto rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="service-card p-12 bg-slate-50/50 border border-slate-100 rounded-[32px] transition" data-aos="fade-up">
+                <div class="service-card p-12 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-[32px] transition" data-aos="fade-up">
                     <div class="w-16 h-16 bg-dark text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="monitor"></i></div>
                     <h3 class="text-2xl font-bold mb-4 italic">Web Yazılım</h3>
                     <p class="text-slate-500">Ölçeklenebilir, modern ve SEO dostu web tabanlı sistemler.</p>
                 </div>
-                <div class="service-card p-12 bg-slate-50/50 border border-slate-100 rounded-[32px] transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card p-12 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-[32px] transition" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-16 h-16 bg-ontera text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="smartphone"></i></div>
                     <h3 class="text-2xl font-bold mb-4 italic">Mobil Uygulama</h3>
                     <p class="text-slate-500">iOS ve Android cihazlar için yüksek kullanıcı deneyimli uygulamalar.</p>
                 </div>
-                <div class="service-card p-12 bg-slate-50/50 border border-slate-100 rounded-[32px] transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card p-12 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-[32px] transition" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-16 h-16 bg-dark text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="cpu"></i></div>
                     <h3 class="text-2xl font-bold mb-4 italic">Özel Yazılımlar</h3>
                     <p class="text-slate-500">İş süreçlerinizi otonom hale getiren verimlilik odaklı yazılımlar.</p>
@@ -134,22 +136,22 @@
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-white">
+    <section id="contact" class="py-32">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div data-aos="fade-up">
                 <h2 class="text-5xl font-bold mb-6 italic text-dark uppercase tracking-tighter">İletişime Geçin</h2>
                 <p class="text-slate-500 text-lg mb-12">Fikriniz ne olursa olsun, doğru teknolojiyle onu devleştirebiliriz.</p>
                 <form class="grid md:grid-cols-2 gap-4 text-left">
-                    <input type="text" placeholder="Adınız" class="p-5 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition">
-                    <input type="email" placeholder="E-posta" class="p-5 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition">
-                    <textarea placeholder="Proje detaylarınız..." rows="4" class="md:col-span-2 p-5 bg-slate-50 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition"></textarea>
+                    <input type="text" placeholder="Adınız" class="p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition">
+                    <input type="email" placeholder="E-posta" class="p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition">
+                    <textarea placeholder="Proje detaylarınız..." rows="4" class="md:col-span-2 p-5 bg-white border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-ontera transition"></textarea>
                     <button class="md:col-span-2 bg-dark text-white py-5 rounded-2xl font-bold text-xl hover:bg-ontera transition shadow-xl shadow-ontera/10">Mesajı İlet</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-100 bg-white">
+    <footer class="py-12 border-t border-slate-100 bg-white/90 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-slate-400 text-sm font-medium">© 2026 <span class="text-dark font-bold">ONTERA</span>. Tüm Hakları Saklıdır.</div>
             <div class="flex space-x-6">
