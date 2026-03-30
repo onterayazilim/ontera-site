@@ -25,14 +25,51 @@
             font-family: 'Inter', sans-serif; 
             background-color: #ffffff; 
             overflow-x: hidden;
-            /* Çizgileri tüm siteye yayan desen */
             background-image: linear-gradient(#f1f1f1 1px, transparent 1px), linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
             background-size: 30px 30px;
-            background-attachment: fixed; /* Sayfa kaysa da desen sabit kalır veya akışla gider */
+            background-attachment: fixed;
         }
-        .service-card:hover { border-color: #d60e71; transform: translateY(-8px); }
+
+        /* Profesyonel Kart Tasarımı */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: #d60e71;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(214, 14, 113, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .premium-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .icon-box {
+            transition: all 0.5s ease;
+        }
+
+        .premium-card:hover .icon-box {
+            background: #d60e71;
+            color: white;
+            transform: rotateY(180deg);
+        }
         
-        /* İçeriğin okunabilirliği için bölümlere hafif beyazlık katmanı */
         section { position: relative; z-index: 10; }
         .hero-mask {
             background: radial-gradient(circle, transparent 20%, white 100%);
@@ -86,21 +123,39 @@
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 italic">Uzmanlık Alanlarımız</h2>
                 <div class="w-24 h-1.5 bg-ontera mx-auto rounded-full"></div>
             </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="service-card p-12 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-[32px] transition" data-aos="fade-up">
-                    <div class="w-16 h-16 bg-dark text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="monitor"></i></div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Web Yazılım</h3>
-                    <p class="text-slate-500">Ölçeklenebilir, modern ve SEO dostu web tabanlı sistemler.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="premium-card p-10 rounded-[32px]" data-aos="fade-up">
+                    <div class="icon-box w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-8 text-dark">
+                        <i data-lucide="monitor" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 tracking-tight">Web Yazılım</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">Ölçeklenebilir, modern ve SEO dostu web tabanlı sistemler ile markanızı güçlendiriyoruz.</p>
+                    <div class="mt-8 flex items-center text-ontera font-bold text-sm">
+                        Detayları Gör <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
                 </div>
-                <div class="service-card p-12 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-[32px] transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-ontera text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="smartphone"></i></div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Mobil Uygulama</h3>
-                    <p class="text-slate-500">iOS ve Android cihazlar için yüksek kullanıcı deneyimli uygulamalar.</p>
+
+                <div class="premium-card p-10 rounded-[32px]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-8 text-dark">
+                        <i data-lucide="smartphone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 tracking-tight">Mobil Uygulama</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">iOS ve Android platformlarında kusursuz çalışan, yüksek performanslı mobil çözümler.</p>
+                    <div class="mt-8 flex items-center text-ontera font-bold text-sm">
+                        Detayları Gör <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
                 </div>
-                <div class="service-card p-12 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-[32px] transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-dark text-white rounded-2xl flex items-center justify-center mb-8"><i data-lucide="cpu"></i></div>
-                    <h3 class="text-2xl font-bold mb-4 italic">Özel Yazılımlar</h3>
-                    <p class="text-slate-500">İş süreçlerinizi otonom hale getiren verimlilik odaklı yazılımlar.</p>
+
+                <div class="premium-card p-10 rounded-[32px]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-8 text-dark">
+                        <i data-lucide="cpu" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 tracking-tight">Özel Yazılımlar</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">İş süreçlerinizi otonom hale getiren, verimlilik odaklı ve size özel yazılım mimarileri.</p>
+                    <div class="mt-8 flex items-center text-ontera font-bold text-sm">
+                        Detayları Gör <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </div>
                 </div>
             </div>
         </div>
